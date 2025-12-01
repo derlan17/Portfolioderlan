@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Derlan Nascimento | Portfólio - Programação e Engenharia</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Font Awesome para ícones -->
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <style>
+        /* Tipografia */
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Roboto:wght@300;400;500&display=swap');
+        
+        /* Paleta de Cores */
+        :root {
+            --color-primary: #001F3F; /* Azul Marinho Escuro */
+            --color-accent: #00BFFF; /* Ciano Elétrico */
+            --color-background: #F5F5F5; /* Cinza Claro */
+            --color-text: #36454F; /* Cinza Carvão */
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: var(--color-background);
+            color: var(--color-text);
+        }
+
+        .header-bg {
+            background-color: var(--color-primary);
+        }
+
+        .accent-text {
+            color: var(--color-accent);
+        }
+        
+        .accent-bg {
+            background-color: var(--color-accent);
+        }
+
+        .section-title {
+            font-family: 'Poppins', sans-serif;
+            font-weight: 700;
+            color: var(--color-primary);
+        }
+
+        /* Animação para elementos de destaque */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+
+        .fade-in.is-visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        /* Estilo para links de contato no rodapé */
+        .social-link {
+            transition: color 0.3s;
+        }
+        .social-link:hover {
+            color: var(--color-accent);
+        }
+        
+        /* Estilo para a imagem de perfil (circular) */
+        .profile-img {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            object-fit: cover;
+            /* Placeholder: Trocar por derlan1.jpg */
+            background-color: #ccc; 
+            border: 6px solid #FFFFFF;
+            box-shadow: 0 4px 15px rgba(0, 31, 63, 0.2);
+        }
+    </style>
+</head>
+
+<body class="transition duration-500">
+    <!-- Navegação e Seletor de Idioma -->
+    <header class="sticky top-0 z-50 shadow-md header-bg">
+        <nav class="container mx-auto p-4 flex justify-between items-center text-white">
+            <div class="text-xl font-bold font-['Poppins']">Derlan Nascimento</div>
+            <div class="flex items-center space-x-4">
+                <div id="language-switcher" class="cursor-pointer font-bold rounded-full border-2 border-white px-2 py-1 text-sm transition duration-300 hover:accent-bg" onclick="toggleLanguage()">
+                    PT/EN
+                </div>
+                <!-- Links de Navegação (Hidden on small screens) -->
+                <div class="hidden md:flex space-x-6 font-['Poppins']">
+                    <a href="#home" class="nav-link text-sm hover:accent-text transition duration-300" data-pt="Início" data-en="Home">Início</a>
+                    <a href="#about" class="nav-link text-sm hover:accent-text transition duration-300" data-pt="Sobre Mim" data-en="About Me">Sobre Mim</a>
+                    <a href="#education" class="nav-link text-sm hover:accent-text transition duration-300" data-pt="Formação" data-en="Education">Formação</a>
+                    <a href="#experience" class="nav-link text-sm hover:accent-text transition duration-300" data-pt="Experiência" data-en="Experience">Experiência</a>
+                    <a href="#hireme" class="nav-link text-sm hover:accent-text transition duration-300" data-pt="Contrate-me" data-en="Hire Me">Contrate-me</a>
+                    <a href="#contact" class="nav-link text-sm hover:accent-text transition duration-300" data-pt="Contacto" data-en="Contact">Contacto</a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main class="container mx-auto px-4 py-8">
+        
+        <!-- 1. Página Inicial (Hero) - Apresentação e Serviços -->
+        <section id="home" class="min-h-screen flex items-center justify-center pt-16 md:pt-0">
+            <div class="text-center max-w-4xl px-4">
+                <!-- Imagem de Perfil -->
+                <div class="flex justify-center mb-8">
+                    <!-- Utilizando o placeholder. Trocar por "derlan1.jpg" se a imagem estiver acessível localmente -->
+                    <img src="https://placehold.co/200x200/cccccc/333333?text=Derlan" alt="Foto de Perfil de Derlan Nascimento" class="profile-img">
+                </div>
+                
+                <h1 class="text-5xl md:text-7xl font-['Poppins'] font-bold text-gray-900 mb-4 fade-in">
+                    Derlan Santos do Nascimento
+                </h1>
+                
+                <p class="text-2xl md:text-4xl font-light accent-text mb-8 fade-in" style="transition-delay: 0.2s;">
+                    <span data-pt="Engenheiro & Estudante de Programação" data-en="Engineer & Programming Student">
+                        Engenheiro & Estudante de Programação
+                    </span>
+                </p>
+
+                <!-- Serviços / Proposta de Valor -->
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-12 fade-in" style="transition-delay: 0.4s;">
+                    <!-- Cartão 1: Lógica (Programação) -->
+                    <div class="bg-white p-6 rounded-xl shadow-lg hover:shadow-2xl transition duration-300 border-t-4 border-l-2 border-r-2 border-[var(--color-accent)]">
+                        <i class="fas fa-microchip text-4xl accent-text mb-3"></i>
+                        <h3 class="font-['Poppins'] text-lg font-semibold mb-2" data-pt="Lógica de Projeto em Código" data-en="Project Logic into Code">Lógica de Projeto em Código</h3>
+                        <p class="text-sm text-gray-600" data-pt="Transformando o rigor da Engenharia em soluções de software eficientes com Python e JavaScript." data-en="Transforming Engineering rigor into efficient software solutions with Python and JavaScript.">Transformando o rigor da Engenharia em soluções de software eficientes com Python e JavaScript.</p>
+                    </div>
+                    <!-- Cartão 2: Resolução de Problemas (Engenharia) -->
+                    <div class="bg-white p-6 rounded-xl shadow-lg hover:shadow-2xl transition duration-300 border-t-4 border-l-2 border-r-2 border-[var(--color-accent)]">
+                        <i class="fas fa-flask text-4xl accent-text mb-3"></i>
+                        <h3 class="font-['Poppins'] text-lg font-semibold mb-2" data-pt="Resolução Analítica" data-en="Analytical Problem Solving">Resolução Analítica</h3>
+                        <p class="text-sm text-gray-600" data-pt="Visão multidisciplinar para identificar problemas complexos e arquitetar soluções escaláveis." data-en="Multidisciplinary vision to identify complex problems and architect scalable solutions.">Visão multidisciplinar para identificar problemas complexos e arquitetar soluções escaláveis.</p>
+                    </div>
+                    <!-- Cartão 3: Gestão de Pessoas (Experiência Gerencial) -->
+                    <div class="bg-white p-6 rounded-xl shadow-lg hover:shadow-2xl transition duration-300 border-t-4 border-l-2 border-r-2 border-[var(--color-accent)]">
+                        <i class="fas fa-users-cog text-4xl accent-text mb-3"></i>
+                        <h3 class="font-['Poppins'] text-lg font-semibold mb-2" data-pt="Liderança e Gestão" data-en="Leadership & Management">Liderança e Gestão</h3>
+                        <p class="text-sm text-gray-600" data-pt="Experiência comprovada em gestão de equipas e projetos, focada em maximização de resultados." data-en="Proven experience in team and project management, focused on maximizing results.">Experiência comprovada em gestão de equipas e projetos, focada em maximização de resultados.</p>
+                    </div>
+                </div>
+
+                <!-- CTA -->
+                <a href="#contact" class="inline-block mt-12 px-10 py-4 text-white font-['Poppins'] font-semibold rounded-full shadow-lg transition duration-300 hover:shadow-xl hover:opacity-90 accent-bg fade-in" style="transition-delay: 0.6s;" data-pt="Entre em Contacto" data-en="Get in Touch">
+                    Entre em Contacto
+                </a>
+            </div>
+        </section>
+
+        <!-- 2. Sobre Mim - Histórico, Vídeo e CV -->
+        <section id="about" class="py-16">
+            <h2 class="section-title text-4xl mb-12 text-center fade-in" data-pt="Sobre Mim" data-en="About Me">Sobre Mim</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+                
+                <!-- Coluna de Texto -->
+                <div class="space-y-6 fade-in">
+                    <p class="text-lg leading-relaxed">
+                        <span data-pt="A minha jornada profissional na Engenharia Civil e na Administração foi fundamentada em lógica, estrutura e resolução de desafios complexos. Hoje, estou a canalizar essa paixão por processos e eficiência para o mundo do desenvolvimento de software." data-en="My professional journey in Civil Engineering and Administration was founded on logic, structure, and solving complex challenges. Today, I am channeling this passion for processes and efficiency into the world of software development.">A minha jornada profissional na Engenharia Civil e na Administração foi fundamentada em lógica, estrutura e resolução de desafios complexos. Hoje, estou a canalizar essa paixão por processos e eficiência para o mundo do desenvolvimento de software.</span>
+                    </p>
+                    <p class="text-lg leading-relaxed font-semibold">
+                        <span data-pt="Procuro a minha primeira oportunidade profissional em programação para aplicar e expandir os meus conhecimentos teóricos. Trago a disciplina da Engenharia, a visão estratégica da Administração e proficiência em " data-en="I am seeking my first professional programming opportunity to apply and expand my theoretical knowledge. I bring the discipline of Engineering, the strategic vision of Administration, and proficiency in ">Procuro a minha primeira oportunidade profissional em programação para aplicar e expandir os meus conhecimentos teóricos. Trago a disciplina da Engenharia, a visão estratégica da Administração e proficiência em </span>
+                        <span class="accent-text font-bold">Python</span> e <span class="accent-text font-bold">JavaScript</span>.
+                    </p>
+                    <p class="text-lg leading-relaxed">
+                        <span data-pt="Estou pronto para agregar valor a projetos que exigem raciocínio lógico, criatividade e visão técnica, utilizando o meu histórico gerencial para contribuir com a organização e o foco em resultados da equipa." data-en="I am ready to add value to projects that demand logical reasoning, creativity, and technical vision, using my managerial background to contribute to the team's organization and focus on results.">Estou pronto para agregar valor a projetos que exigem raciocínio lógico, criatividade e visão técnica, utilizando o meu histórico gerencial para contribuir com a organização e o foco em resultados da equipa.</span>
+                    </p>
+                </div>
+
+                <!-- Coluna de Vídeo e CV -->
+                <div class="bg-white p-6 rounded-xl shadow-lg fade-in" style="transition-delay: 0.2s;">
+                    <h3 class="font-['Poppins'] text-xl font-semibold mb-4 accent-text" data-pt="Apresentação em Vídeo e CV" data-en="Video Presentation & CV">Apresentação em Vídeo e CV</h3>
+                    
+                    <!-- Vídeo de Apresentação -->
+                    <div class="relative w-full aspect-video mb-6">
+                        <iframe class="w-full h-full rounded-lg" src="https://www.youtube.com/embed/uB-4mqI5-4U" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen title="YouTube video player - Derlan Nascimento Pitch"></iframe>
+                    </div>
+
+                    <p class="text-sm text-gray-600 mb-4" data-pt="Assista ao meu pitch pessoal (1min 38s) sobre o meu compromisso com a transformação de desafios técnicos em soluções eficientes." data-en="Watch my personal pitch (1min 38s) on my commitment to turning technical challenges into efficient solutions.">Assista ao meu pitch pessoal (1min 38s) sobre o meu compromisso com a transformação de desafios técnicos em soluções eficientes.</p>
+                    
+                    <!-- CV -->
+                    <a href="CV Derlan Nascimento.pdf" target="_blank" class="flex items-center justify-center space-x-2 px-6 py-3 border border-[var(--color-accent)] accent-text font-semibold rounded-lg transition duration-300 hover:bg-[var(--color-accent)] hover:text-white">
+                        <i class="fas fa-download"></i>
+                        <span data-pt="Descarregar Currículo (CV)" data-en="Download Resume (CV)">Descarregar Currículo (CV)</span>
+                    </a>
+                </div>
+            </div>
+        </section>
+        
+        <!-- 3. Nível de Escolaridade - Todos os Diplomas -->
+        <section id="education" class="py-16 bg-white rounded-xl shadow-xl">
+            <h2 class="section-title text-4xl mb-12 text-center fade-in" data-pt="Formação Académica" data-en="Academic Education">Formação Académica</h2>
+            <div class="max-w-3xl mx-auto space-y-8">
+                
+                <!-- Item 1: Programação (Destaque) -->
+                <div class="flex items-start space-x-4 fade-in">
+                    <div class="text-2xl accent-text pt-1"><i class="fas fa-code"></i></div>
+                    <div>
+                        <h3 class="font-['Poppins'] text-xl font-semibold" data-pt="Técnico Superior Profissional em Programação de Sistema de Informação" data-en="Technical Superior Professional in Information System Programming">Técnico Superior Profissional em Programação de Sistema de Informação</h3>
+                        <p class="text-lg font-medium text-gray-700">ESTGA - Universidade de Aveiro, Portugal</p>
+                        <p class="text-sm text-gray-500" data-pt="2025 - Presente (Em Curso)" data-en="2025 - Present (In Progress)">2025 - Presente (Em Curso)</p>
+                    </div>
+                </div>
+
+                <!-- Item 2: Pós Graduação -->
+                <div class="flex items-start space-x-4 fade-in" style="transition-delay: 0.1s;">
+                    <div class="text-2xl accent-text pt-1"><i class="fas fa-graduation-cap"></i></div>
+                    <div>
+                        <h3 class="font-['Poppins'] text-xl font-semibold" data-pt="Pós-Graduação em Gestão, Execução e Controlo de Obras" data-en="Post-Graduation in Management, Execution, and Control of Works">Pós-Graduação em Gestão, Execução e Controlo de Obras</h3>
+                        <p class="text-lg font-medium text-gray-700" data-pt="Centro Educacional BSSP" data-en="BSSP Educational Center">Centro Educacional BSSP</p>
+                        <p class="text-sm text-gray-500" data-pt="Concluída em 2022" data-en="Completed in 2022">Concluída em 2022</p>
+                    </div>
+                </div>
+
+                <!-- Item 3: Engenharia Civil -->
+                <div class="flex items-start space-x-4 fade-in" style="transition-delay: 0.2s;">
+                    <div class="text-2xl accent-text pt-1"><i class="fas fa-building"></i></div>
+                    <div>
+                        <h3 class="font-['Poppins'] text-xl font-semibold" data-pt="Graduação em Engenharia Civil" data-en="Graduation in Civil Engineering">Graduação em Engenharia Civil</h3>
+                        <p class="text-lg font-medium text-gray-700" data-pt="Unifacemp" data-en="Unifacemp">Unifacemp</p>
+                        <p class="text-sm text-gray-500" data-pt="Concluída em 2021" data-en="Completed in 2021">Concluída em 2021</p>
+                    </div>
+                </div>
+
+                <!-- Item 4: Administração -->
+                <div class="flex items-start space-x-4 fade-in" style="transition-delay: 0.3s;">
+                    <div class="text-2xl accent-text pt-1"><i class="fas fa-chart-line"></i></div>
+                    <div>
+                        <h3 class="font-['Poppins'] text-xl font-semibold" data-pt="Graduação em Administração de Empresas" data-en="Graduation in Business Administration">Graduação em Administração de Empresas</h3>
+                        <p class="text-lg font-medium text-gray-700" data-pt="Unifacemp" data-en="Unifacemp">Unifacemp</p>
+                        <p class="text-sm text-gray-500" data-pt="Concluída em 2010" data-en="Completed in 2010">Concluída em 2010</p>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- 4. Experiências Profissionais (Destaque para Gestão) -->
+        <section id="experience" class="py-16">
+            <h2 class="section-title text-4xl mb-12 text-center fade-in" data-pt="Experiências Profissionais" data-en="Professional Experience">Experiências Profissionais</h2>
+            <div class="max-w-4xl mx-auto space-y-12">
+                
+                <!-- Item 1: Liderança e Gestão (Engloba Rádio, Assessor e Eng. Civil) -->
+                <div class="relative pl-12 pb-8 border-l-4 border-[var(--color-primary)] fade-in">
+                    <div class="absolute -left-3 top-0 w-6 h-6 rounded-full accent-bg border-4 border-white"></div>
+                    <p class="text-sm font-semibold mb-1 accent-text" data-pt="Histórico em Gestão e Liderança" data-en="Management and Leadership History">Histórico em Gestão e Liderança</p>
+                    <h3 class="font-['Poppins'] text-2xl font-bold mb-2 text-gray-800" data-pt="Gerente, Assessor e Engenheiro Civil" data-en="Manager, Advisor, and Civil Engineer">Gerente, Assessor e Engenheiro Civil</h3>
+                    <p class="text-gray-600 italic mb-4" data-pt="(Rádio, Assessor Parlamentar e Engenharia Civil - Diversos Papéis)" data-en="(Radio, Parliamentary Advisor, and Civil Engineering - Various Roles)">(Rádio, Assessor Parlamentar e Engenharia Civil - Diversos Papéis)</p>
+                    
+                    <p class="text-lg leading-relaxed">
+                        <span data-pt="Em diversos cargos, incluindo Gerente de Rádio e Assessor Parlamentar, o meu foco principal foi a " data-en="In various roles, including Radio Manager and Parliamentary Advisor, my main focus has been on ">Em diversos cargos, incluindo Gerente de Rádio e Assessor Parlamentar, o meu foco principal foi a </span>
+                        <span class="font-bold accent-text" data-pt="gestão de pessoas e a maximização de resultados." data-en="people management and results maximization.">gestão de pessoas e a maximização de resultados.</span>
+                    </p>
+                    <ul class="list-disc list-inside text-gray-700 mt-4 space-y-2">
+                        <li>
+                            <span data-pt="Liderança de equipas e otimização de recursos em ambientes de alta responsabilidade." data-en="Team leadership and resource optimization in high-responsibility environments.">Liderança de equipas e otimização de recursos em ambientes de alta responsabilidade.</span>
+                        </li>
+                        <li>
+                            <span data-pt="Tomada de decisões estratégicas para garantir o sucesso operacional dos projetos." data-en="Strategic decision-making to ensure the operational success of projects.">Tomada de decisões estratégicas para garantir o sucesso operacional dos projetos.</span>
+                        </li>
+                        <li>
+                            <span data-pt="Foco em organização e processos, competências transferíveis para o desenvolvimento de software." data-en="Focus on organization and processes, transferable to software development.">Foco em organização e processos, competências transferíveis para o desenvolvimento de software.</span>
+                        </li>
+                    </ul>
+                </div>
+                
+                <!-- Item 2: Cargo Atual (Engenheiro Civil - Portugal) -->
+                <div class="relative pl-12 border-l-4 border-[var(--color-primary)] fade-in" style="transition-delay: 0.2s;">
+                    <div class="absolute -left-3 top-0 w-6 h-6 rounded-full accent-bg border-4 border-white"></div>
+                    <p class="text-sm font-semibold mb-1 accent-text" data-pt="Função Atual" data-en="Current Role">Função Atual</p>
+                    <h3 class="font-['Poppins'] text-2xl font-bold mb-2 text-gray-800" data-pt="Engenheiro Civil" data-en="Civil Engineer">Engenheiro Civil</h3>
+                    <p class="text-gray-600 italic mb-4">Construtora Paulista, Sever do Vouga, Portugal (2023 - Atualmente)</p>
+                    <p class="text-lg leading-relaxed text-gray-700" data-pt="Responsável pela composição de orçamentos e preparação de documentos para concursos públicos." data-en="Responsible for budget composition and preparation of documents for public tenders.">Responsável pela composição de orçamentos e preparação de documentos para concursos públicos.</p>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- 5. Porque Me Contratar - Proatividade e Esforço -->
+        <section id="hireme" class="py-16 bg-[var(--color-primary)] rounded-xl shadow-2xl text-white">
+            <h2 class="section-title text-4xl mb-12 text-center text-white fade-in" data-pt="Por Que Me Contratar?" data-en="Why Hire Me?">Por Que Me Contratar?</h2>
+            <div class="max-w-3xl mx-auto px-4 text-center space-y-6">
+                
+                <p class="text-xl font-light leading-relaxed fade-in">
+                    <span data-pt="O valor que trago para a sua equipa vai além das habilidades técnicas adquiridas no curso de Programação. A minha principal característica é a " data-en="The value I bring to your team goes beyond the technical skills acquired in the Programming course. My main trait is ">O valor que trago para a sua equipa vai além das habilidades técnicas adquiridas no curso de Programação. A minha principal característica é a </span>
+                    <span class="font-bold accent-text" data-pt="Proatividade e a busca incessante por Novos Conhecimentos." data-en="Proactivity and the relentless pursuit of New Knowledge.">Proatividade e a busca incessante por Novos Conhecimentos.</span>
+                </p>
+
+                <p class="text-xl font-light leading-relaxed fade-in" style="transition-delay: 0.2s;">
+                    <span data-pt="Não me limito a esperar por tarefas: identifico problemas, proponho soluções e dedico-me integralmente à aprendizagem contínua. Sou " data-en="I don't just wait for tasks: I identify problems, propose solutions, and fully commit myself to continuous learning. I am ">Não me limito a esperar por tarefas: identifico problemas, proponho soluções e dedico-me integralmente à aprendizagem contínua. Sou </span>
+                    <span class="font-bold accent-text" data-pt="extremamente esforçado" data-en="extremely hardworking">extremamente esforçado</span>
+                    <span data-pt=" e trago a disciplina e o foco em resultados, essenciais na Engenharia, para o desenvolvimento de software." data-en=" and bring the discipline and focus on results, essential in Engineering, into software development."> e trago a disciplina e o foco em resultados, essenciais na Engenharia, para o desenvolvimento de software.</span>
+                </p>
+                
+                <div class="pt-8 fade-in" style="transition-delay: 0.4s;">
+                    <a href="#contact" class="inline-block px-10 py-4 font-['Poppins'] font-semibold rounded-full shadow-lg transition duration-300 hover:shadow-xl hover:opacity-90 bg-white text-[var(--color-primary)]">
+                        <span data-pt="Fale Comigo Agora" data-en="Talk to Me Now">Fale Comigo Agora</span>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- 6. Contacto - Formulário e Links Diretos -->
+        <section id="contact" class="py-16">
+            <h2 class="section-title text-4xl mb-12 text-center fade-in" data-pt="Entre em Contacto" data-en="Get in Touch">Entre em Contacto</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 max-w-4xl mx-auto">
+                
+                <!-- Formulário -->
+                <div class="bg-white p-8 rounded-xl shadow-lg fade-in">
+                    <h3 class="font-['Poppins'] text-2xl font-semibold mb-6 accent-text" data-pt="Envie-me uma Mensagem" data-en="Send Me a Message">Envie-me uma Mensagem</h3>
+                    <form onsubmit="showContactMessage(event)">
+                        <div class="mb-4">
+                            <label for="name" class="block text-sm font-medium text-gray-700" data-pt="Nome" data-en="Name">Nome</label>
+                            <input type="text" id="name" name="name" class="mt-1 block w-full border-gray-300 rounded-md shadow-sm p-3 focus:ring-[var(--color-accent)] focus:border-[var(--color-accent)]" required>
+                        </div>
+                        <div class="mb-4">
+                            <label for="email" class="block text-sm font-medium text-gray-700">Email</label>
+                            <input type="email" id="email" name="email" class="mt-1 block w-full border-gray-300 rounded-md shadow-sm p-3 focus:ring-[var(--color-accent)] focus:border-[var(--color-accent)]" required>
+                        </div>
+                        <div class="mb-4">
+                            <label for="subject" class="block text-sm font-medium text-gray-700" data-pt="Assunto" data-en="Subject">Assunto</label>
+                            <input type="text" id="subject" name="subject" class="mt-1 block w-full border-gray-300 rounded-md shadow-sm p-3 focus:ring-[var(--color-accent)] focus:border-[var(--color-accent)]" required>
+                        </div>
+                        <div class="mb-6">
+                            <label for="message" class="block text-sm font-medium text-gray-700" data-pt="Mensagem" data-en="Message">Mensagem</label>
+                            <textarea id="message" name="message" rows="4" class="mt-1 block w-full border-gray-300 rounded-md shadow-sm p-3 focus:ring-[var(--color-accent)] focus:border-[var(--color-accent)]" required></textarea>
+                        </div>
+                        <button type="submit" class="w-full text-white font-['Poppins'] font-semibold py-3 rounded-md transition duration-300 hover:opacity-90 accent-bg" data-pt="Enviar Mensagem" data-en="Send Message">Enviar Mensagem</button>
+                    </form>
+                    
+                    <!-- Mensagem de Confirmação (custom modal) -->
+                    <div id="contact-message" class="hidden fixed inset-0 bg-gray-600 bg-opacity-75 flex items-center justify-center z-50">
+                        <div class="bg-white p-8 rounded-lg shadow-2xl max-w-sm w-full text-center">
+                            <i class="fas fa-check-circle text-5xl accent-text mb-4"></i>
+                            <p class="text-xl font-semibold mb-4"><span data-pt="Mensagem Enviada!" data-en="Message Sent!">Mensagem Enviada!</span></p>
+                            <p><span data-pt="Obrigado pelo seu contacto. Responderei em breve." data-en="Thank you for your message. I will reply shortly.">Obrigado pelo seu contacto. Responderei em breve.</span></p>
+                            <button onclick="document.getElementById('contact-message').classList.add('hidden')" class="mt-6 px-4 py-2 text-white rounded-md accent-bg" data-pt="Fechar" data-en="Close">Fechar</button>
+                        </div>
+                    </div>
+
+                </div>
+                
+                <!-- Links Diretos (Atualizados com Telemóvel) -->
+                <div class="space-y-8 fade-in" style="transition-delay: 0.1s;">
+                    
+                    <!-- Telemóvel/Telefone -->
+                    <div class="bg-white p-6 rounded-xl shadow-lg flex items-center space-x-4">
+                        <i class="fas fa-phone-alt text-3xl accent-text"></i>
+                        <div>
+                            <p class="font-['Poppins'] text-lg font-semibold" data-pt="Telemóvel" data-en="Mobile Phone">Telemóvel</p>
+                            <a href="tel:+351935824964" class="accent-text hover:underline">(+351) 935 824 964</a>
+                        </div>
+                    </div>
+                    
+                    <!-- Email -->
+                    <div class="bg-white p-6 rounded-xl shadow-lg flex items-center space-x-4">
+                        <i class="fas fa-envelope text-3xl accent-text"></i>
+                        <div>
+                            <p class="font-['Poppins'] text-lg font-semibold" data-pt="Email Profissional" data-en="Professional Email">Email Profissional</p>
+                            <a href="mailto:derlan17@gmail.com" class="accent-text hover:underline">derlan17@gmail.com</a>
+                        </div>
+                    </div>
+                    
+                    <!-- LinkedIn -->
+                    <div class="bg-white p-6 rounded-xl shadow-lg flex items-center space-x-4">
+                        <i class="fab fa-linkedin text-3xl accent-text"></i>
+                        <div>
+                            <p class="font-['Poppins'] text-lg font-semibold">LinkedIn</p>
+                            <a href="https://www.linkedin.com/in/derlan-santos-do-nascimento-938a39112/" target="_blank" class="accent-text hover:underline">/derlan-santos-do-nascimento...</a>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Rodapé -->
+    <footer class="header-bg text-white py-8">
+        <div class="container mx-auto text-center">
+            <p>&copy; 2025 Derlan Nascimento | <span data-pt="Desenvolvido com Foco em Lógica e Estrutura." data-en="Developed with Focus on Logic and Structure.">Desenvolvido com Foco em Lógica e Estrutura.</span></p>
+        </div>
+    </footer>
+
+    <!-- JavaScript para Funcionalidade -->
+    <script>
+        // ------------------------------------------------
+        // 1. Funcionalidade Bilíngue (PT/EN)
+        // ------------------------------------------------
+        let currentLang = 'pt';
+        const switcher = document.getElementById('language-switcher');
+        
+        function updateTexts() {
+            // Atualiza o texto dos elementos com data-pt e data-en
+            document.querySelectorAll('[data-pt], [data-en]').forEach(el => {
+                // Previne a alteração de elementos que não possuem os data attributes
+                if (currentLang === 'pt' && el.dataset.pt) {
+                    el.textContent = el.dataset.pt;
+                } else if (currentLang === 'en' && el.dataset.en) {
+                    el.textContent = el.dataset.en;
+                }
+            });
+            // Atualiza o texto do switcher (display)
+            switcher.textContent = currentLang === 'pt' ? 'EN/PT' : 'PT/EN';
+            // Atualiza o atributo lang da página
+            document.documentElement.lang = currentLang;
+        }
+
+        function toggleLanguage() {
+            currentLang = currentLang === 'pt' ? 'en' : 'pt';
+            updateTexts();
+            // Salva a preferência
+            localStorage.setItem('portfolioLang', currentLang);
+        }
+
+        // Carrega a preferência ao iniciar
+        document.addEventListener('DOMContentLoaded', () => {
+            const savedLang = localStorage.getItem('portfolioLang');
+            if (savedLang) {
+                currentLang = savedLang;
+            }
+            updateTexts();
+            
+            // Inicia o Observer para as animações de scroll
+            initScrollAnimations();
+        });
+
+        // ------------------------------------------------
+        // 2. Animações Profissionais (Observer API)
+        // ------------------------------------------------
+        function initScrollAnimations() {
+            const observer = new IntersectionObserver(entries => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('is-visible');
+                        // Remove a observação para a animação ocorrer apenas uma vez, 
+                        // exceto em elementos que não a possuem (se aplicável, mas melhor para performance).
+                        if(entry.target.style.getPropertyValue('transition-delay') !== '0s') {
+                            observer.unobserve(entry.target); 
+                        }
+                    }
+                });
+            }, {
+                rootMargin: '0px',
+                threshold: 0.1 // O elemento se torna visível quando 10% dele estiver na tela
+            });
+
+            document.querySelectorAll('.fade-in').forEach(el => {
+                observer.observe(el);
+            });
+        }
+        
+        // ------------------------------------------------
+        // 3. Simulação de Envio de Formulário
+        // ------------------------------------------------
+        function showContactMessage(event) {
+            event.preventDefault();
+            // Simula o envio, não envia dados reais
+            
+            // Exibe a modal de sucesso
+            document.getElementById('contact-message').classList.remove('hidden');
+            
+            // Opcional: Limpa o formulário após a simulação
+            event.target.reset();
+        }
+
+    </script>
+</body>
+</html>
